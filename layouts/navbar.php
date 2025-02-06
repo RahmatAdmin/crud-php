@@ -23,7 +23,7 @@
             <a class="nav-link active" aria-current="page" href="/project/index.php">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/project/index.php">Data Pakaian</a>
+            <a class="nav-link active" href="/project/index.php">Data Cake</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="about.php">About</a>
