@@ -4,7 +4,7 @@ include '../layouts/navbar.php';
     <div style="margin-top: 120px;" class="container">
         <div class="body">
         <div class="heading">TENTANG SAYA</div>
-        <img width="350px" height="200px" src="../src/img/foto.jpeg" alt="" srcset="">
+        <img width="350px" height="200px" src="../foto.jpeg" alt="" srcset="">
         <p>Nama : <span>Helwina Putri Ramadhani</span></p>
         <p>Tempat Lahir : <span> Pekanbaru</span></p>
         <p>Tanggal Lahir : <span>10 November 2003</span></p>

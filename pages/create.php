@@ -29,47 +29,89 @@ if(isset($_POST["submit"])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Input Data Kue</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            margin: 150px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h3 {
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background: darkblue;
+        }
+    </style>
 </head>
 <body>
 
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div style="margin-top: 150px;" class="card shadow-lg border-0 rounded-4">
-                <div class="card-body p-4">
-                    <h3 class="text-center mb-4">Input Data</h3>
-                    <form method="post">
-                        <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Kue</label>
-                            <input type="text" class="form-control" id="nama" name="nama" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="harga" class="form-label">Harga</label>
-                            <input type="number" class="form-control" id="harga" name="harga" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="stock" class="form-label">Stock</label>
-                            <input type="number" class="form-control" id="stock" name="stock" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="author" class="form-label">Jenis Kue</label>
-                            <input type="text" class="form-control" id="author" name="author" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="deskripsi" class="form-label">Deskripsi</label>
-                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" required></textarea>
-                        </div>
-                        <button type="submit" name="submit" class="btn btn-primary w-100">Submit</button>
-                    </form>
-                </div>
-            </div>
+<div class="container">
+    <h3>Input Data Kue</h3>
+    <form method="post">
+        <div class="form-group">
+            <label for="nama">Nama Kue</label>
+            <input type="text" id="nama" name="nama" required>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="harga">Harga</label>
+            <input type="number" id="harga" name="harga" required>
+        </div>
+        <div class="form-group">
+            <label for="stock">Stock</label>
+            <input type="number" id="stock" name="stock" required>
+        </div>
+        <div class="form-group">
+            <label for="author">Jenis Kue</label>
+            <input type="text" id="author" name="author" required>
+        </div>
+        <div class="form-group">
+            <label for="deskripsi">Deskripsi</label>
+            <textarea id="deskripsi" name="deskripsi" required></textarea>
+        </div>
+        <button type="submit" name="submit" class="btn-submit">Submit</button>
+    </form>
 </div>
 
 </body>

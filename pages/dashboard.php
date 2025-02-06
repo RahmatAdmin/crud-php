@@ -11,11 +11,57 @@ $number = 1;
 
 ?>
 
-<div style="margin-top: 150px;" class="container">
-<main class="mt-12">
-<table>
+<style>
+     .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px 0;
+    }
+    .btn-add {
+        display: inline-block;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    .inline-form {
+        display: inline;
+    }
+    .btn-update, .btn-delete {
+        padding: 5px 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 3px;
+    }
+    .btn-update {
+        background-color: #28a745;
+        color: white;
+    }
+    .btn-delete {
+        background-color: #dc3545;
+        color: white;
+    }
+</style>
+
+<div class="container">
+    <button class="btn-add"><a href="create.php">Tambah Data</a></button>
+    <table>
         <thead>
-            <button class="btn btn-outline-primary mt-4"><a style="text-decoration: none;" href="create.php">Tambah Data</a></button>
             <tr>
                 <th>No</th>
                 <th>Nama</th>
@@ -35,28 +81,20 @@ $number = 1;
                     <td><?= $data["stock"] ?></td>
                     <td><?= $data["author"] ?></td>
                     <td><?= $data["deskripsi"] ?></td>
-                    <td class="d-flex justify-content-center">
-    <div class="row w-100">
-        <div class="col-12 col-sm-6 mb-2">
-            <form action="update.php" method="get">
-                <input type="hidden" name="id" id="id" value="<?= $data['id']; ?>">
-                <button class="btn-update w-100">update</button>
-            </form>
-        </div>
-        <div class="col-12 col-sm-6">
-            <form action="delete.php" method="post">
-                <input type="hidden" name="id" value="<?= $data['id']; ?>">
-                <button class="btn-delete w-100">delete</button>
-            </form>
-        </div>
-    </div>
-</td>
-
+                    <td>
+                        <form action="update.php" method="get" class="inline-form">
+                            <input type="hidden" name="id" value="<?= $data['id']; ?>">
+                            <button class="btn-update">Update</button>
+                        </form>
+                        <form action="delete.php" method="post" class="inline-form">
+                            <input type="hidden" name="id" value="<?= $data['id']; ?>">
+                            <button class="btn-delete">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             <?php endwhile; ?>
         </tbody>
     </table>
-</main>
 </div>
 
 </body>

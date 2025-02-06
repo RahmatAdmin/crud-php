@@ -7,76 +7,203 @@ $RESULT = $connection->query($QUERY);
 ?>
 <!DOCTYPE html>
 <html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="public/index.css">
-    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../public/index.css">
-    <title>Document</title>
+    <title>Navbar Sederhana</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px 20px;
+        }
+        .navbar img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 10px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+        }
+        .nav-links a:hover {
+            background-color: #555;
+            border-radius: 4px;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+        }
+        .search-box input {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-right: 5px;
+        }
+        .search-box button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .search-box button:hover {
+            background-color: #218838;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 50px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .content {
+            max-width: 50%;
+        }
+        .content h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .content p {
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .buttons a {
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border: none;
+        }
+        .btn-secondary {
+            background-color: #f8f9fa;
+            color: black;
+            border: 1px solid #ccc;
+        }
+        .image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        .container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 0;
+    }
+    .item {
+        width: calc(50% - 10px);
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+    .item h3 {
+        margin-bottom: 10px;
+    }
+    .item p {
+        margin-bottom: 5px;
+    }
+    .price {
+        font-weight: bold;
+        color: #007bff;
+    }
+    .buy {
+        padding: 8px 12px;
+        border: none;
+        background-color: #007bff;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .buy:hover {
+        background-color: #0056b3;
+    }
+    .footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
 </head>
 <body>
-
-<header>
-  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <div class="container-fluid">
-      <img style="width: 50px; height: 50px; border-radius: 100%;" src="./src/img/logo.jpg" alt="" srcset="">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav me-auto mb-2 mb-md-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/project/index.php">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="./pages/dashboard.php">Data Cake</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="./pages/about.php">About</a>
-          </li>
-        </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
-    </div>
-  </nav>
-</header>
-
-<div>
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="src/img/cake.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">Slamat Datang Di Toko Cake Online</h1>
-        <p style="text-align: justify;" class="lead">ini adalah sebuah sistem berbasis web untuk mengelola dan memanajemen data-data kue yang tersedia secara otomatis dan online. dilengkapi dengan fitur CRUD untuk owner dapat melihat data kue, membuat data kue, mengedit data, dan menghapus data dengan sangat efisien</p>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2"><a style="color: white; text-decoration: none;" href="pages/dashboard.php">Dashboard</a></button>
-          <button type="button" class="btn btn-outline-secondary btn-lg px-4"><a style="color: rgb(0, 0, 0); text-decoration: none;" href="./pages/about.php">About Me</a></button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <header>
+        <nav class="navbar">
+            <img src="logo.jpg" alt="Logo">
+            <ul class="nav-links">
+                <li><a href="/project/index.php">Home</a></li>
+                <li><a href="/project/pages/dashboard.php">Data Cake</a></li>
+                <li><a href="about.php">About</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="search" placeholder="Search">
+                <button type="submit">Search</button>
+            </div>
+        </nav>
+    </header>
+</body>
+</html>
 
 <div class="container">
-  <div class="row">
-    <?php while($data = $RESULT->fetch_assoc()): ?>
-      <div class="col-12 col-sm-6 mb-3">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title"><?= $data["nama"] ?></h5>
-            <p class="card-text">jenis : <?= $data["author"] ?></p>
-            <p class="card-text">Deskripsi : <?= $data["deskripsi"] ?></p>
-            <a href="#" class="btn btn-primary">Rp. <?= number_format($data["harga"], 0,',', '.') ?></a>
-            <button class="btn btn-outline-primary">Beli</button>
-          </div>
+        <div class="image">
+            <img src="cake.png" alt="Cake Image">
         </div>
-      </div>
-    <?php endwhile; ?>
-  </div>
+        <div class="content">
+            <h1>Selamat Datang Di Toko Cake Online</h1>
+            <p>Ini adalah sebuah sistem berbasis web untuk mengelola dan memanajemen data-data kue yang tersedia secara otomatis dan online. Dilengkapi dengan fitur CRUD untuk owner dapat melihat data kue, membuat data kue, mengedit data, dan menghapus data dengan sangat efisien.</p>
+            <div class="buttons">
+                <a class="btn-primary" href="pages/dashboard.php">Dashboard</a>
+                <a class="btn-secondary" href="./pages/about.php">About Me</a>
+            </div>
+        </div>
+    </div>
+
+    <?php while($data = $RESULT->fetch_assoc()): ?>
+    <div class="item">
+        <h3><?= $data["nama"] ?></h3>
+        <p>Jenis: <?= $data["author"] ?></p>
+        <p>Deskripsi: <?= $data["deskripsi"] ?></p>
+        <p class="price">Rp. <?= number_format($data["harga"], 0,',', '.') ?></p>
+        <button class="buy">Beli</button>
+    </div>
+<?php endwhile; ?>
+
+<div class="footer">
+    &copy; <?= date("Y"); ?> Your Website. All Rights Reserved.
 </div>
