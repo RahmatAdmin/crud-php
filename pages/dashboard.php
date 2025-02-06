@@ -7,6 +7,8 @@ include '../pages/delete.php';
 $QUERY = "SELECT * FROM data";
 $RESULT = $connection->query($QUERY);
 
+$number = 1;
+
 ?>
 
 <div style="margin-top: 150px;" class="container">
@@ -15,20 +17,24 @@ $RESULT = $connection->query($QUERY);
         <thead>
             <button class="btn btn-outline-primary mt-4"><a style="text-decoration: none;" href="create.php">Tambah Data</a></button>
             <tr>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Harga</th>
                 <th>Stock</th>
-                <th>Author</th>
+                <th>Jenis</th>
+                <th>Deskripsi</th>
                 <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <?php while($data = $RESULT->fetch_assoc()): ?>
                 <tr>
+                    <td><?= $number++ ?></td>
                     <td><?= $data["nama"] ?></td>
-                    <td><?= $data["harga"] ?></td>
+                    <td>Rp. <?= number_format($data["harga"], 0,',', '.') ?></td>
                     <td><?= $data["stock"] ?></td>
                     <td><?= $data["author"] ?></td>
+                    <td><?= $data["deskripsi"] ?></td>
                     <td class="d-flex justify-content-center">
     <div class="row w-100">
         <div class="col-12 col-sm-6 mb-2">

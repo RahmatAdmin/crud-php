@@ -8,11 +8,16 @@ if(isset($_POST["submit"])) {
     $harga = (int) $_POST["harga"];
     $stock = (int) $_POST["stock"];
     $author = mysqli_real_escape_string($connection, $_POST["author"]);
+    $deskripsi = mysqli_real_escape_string($connection, $_POST["deskripsi"]);
 
-    $QUERY = "INSERT INTO data (nama, harga, stock, author) VALUES (?, ?, ?, ?)";
+    $QUERY = "INSERT INTO data (nama, harga, stock, author, deskripsi) VALUES (?, ?, ?, ?, ?)";
 
     $stmt = $connection->prepare($QUERY);
-    $stmt->bind_param("siis", $nama, $harga, $stock, $author);
+    if($stmt === false ) {
+        die("error :" . $connection->error);
+    }
+    
+    $stmt->bind_param("siiss", $nama, $harga, $stock, $author, $deskripsi);
 
     if($stmt->execute()) {
         header("Location: dashboard.php");
@@ -40,7 +45,7 @@ if(isset($_POST["submit"])) {
                     <h3 class="text-center mb-4">Input Data</h3>
                     <form method="post">
                         <div class="mb-3">
-                            <label for="nama" class="form-label">Nama</label>
+                            <label for="nama" class="form-label">Nama Kue</label>
                             <input type="text" class="form-control" id="nama" name="nama" required>
                         </div>
                         <div class="mb-3">
@@ -52,8 +57,12 @@ if(isset($_POST["submit"])) {
                             <input type="number" class="form-control" id="stock" name="stock" required>
                         </div>
                         <div class="mb-3">
-                            <label for="author" class="form-label">Author</label>
+                            <label for="author" class="form-label">Jenis Kue</label>
                             <input type="text" class="form-control" id="author" name="author" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" required></textarea>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary w-100">Submit</button>
                     </form>

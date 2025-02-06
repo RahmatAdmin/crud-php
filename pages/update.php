@@ -23,10 +23,11 @@ if(isset($_GET["id"])) {
     $harga = $_POST["harga"];
     $stock = $_POST["stock"];
     $author = $_POST["author"];
+    $deskripsi = $_POST["deskripsi"];
 
-    $QUERY_UPDATE = "UPDATE data SET nama=?, harga=?, stock=?, author=? WHERE id=?";
+    $QUERY_UPDATE = "UPDATE data SET nama=?, harga=?, stock=?, author=?, deskripsi=? WHERE id=?";
     $update = $connection->prepare($QUERY_UPDATE);
-    $update->bind_param("sdisi", $nama, $harga, $stock, $author, $id);
+    $update->bind_param("sdissi", $nama, $harga, $stock, $author, $deskripsi, $id);
 
     if($update->execute()) {
         header("Location: dashboard.php");
@@ -69,6 +70,10 @@ if(isset($_GET["id"])) {
                         <div class="mb-3">
                             <label for="author" class="form-label">Author</label>
                             <input type="text" class="form-control" id="author" name="author" value="<?= $data["author"]; ?>" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="deskripsi" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" id="deskripsi" name="deskripsi" rows="4" value="<?= $data["deskripsi"]; ?>" required></textarea>
                         </div>
                         <button type="submit" name="submit" class="btn btn-primary w-100">Submit</button>
                     </form>
