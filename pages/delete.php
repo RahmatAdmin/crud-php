@@ -1,5 +1,5 @@
 <?php
-include '../config/config.php';
+$connection = new mysqli("localhost", 'root', '', 'taufik');
 
 if(isset($_POST["id"])) {
     $id = $_POST["id"];

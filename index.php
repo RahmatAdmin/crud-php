@@ -1,5 +1,12 @@
 <?php
-include './config/config.php';
+$connection = new mysqli("localhost", 'root', '', 'taufik');
+
+// if($connection->connect_error) {
+//     die("Koneksi Gagal");
+// } else {
+//     echo "koneksi tersambung";
+// }
+
 
 $QUERY = "SELECT * FROM data";
 $RESULT = $connection->query($QUERY);
@@ -24,7 +31,7 @@ $RESULT = $connection->query($QUERY);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: blue;
             padding: 10px 20px;
         }
         .navbar img {
