@@ -167,7 +167,7 @@ $RESULT = $connection->query($QUERY);
 <body>
     <header>
         <nav class="navbar">
-            <img src="logo.jpg" alt="Logo">
+            <img src="./img/logo.jpg" alt="Logo">
             <ul class="nav-links">
                 <li><a href="/project/index.php">Home</a></li>
                 <li><a href="/project/pages/dashboard.php">Data Cake</a></li>
@@ -184,7 +184,7 @@ $RESULT = $connection->query($QUERY);
 
 <div class="container">
         <div class="image">
-            <img src="cake.png" alt="Cake Image">
+            <img src="./img/cake.png" alt="Cake Image">
         </div>
         <div class="content">
             <h1>Selamat Datang Di Toko Cake Online</h1>

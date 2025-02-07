@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/about.css">
     <title>Document</title>
     <style>
         .navbar {
@@ -60,7 +61,7 @@
 <body>
 <header>
         <nav class="navbar">
-            <img src="../logo.jpg" alt="Logo">
+            <img src="../img/logo.jpg" alt="Logo">
             <ul class="nav-links">
                 <li><a href="/project/index.php">Home</a></li>
                 <li><a href="/project/pages/dashboard.php">Data Cake</a></li>
@@ -76,7 +77,7 @@
     <div style="margin-top: 120px;" class="container">
         <div class="body">
         <div class="heading">TENTANG SAYA</div>
-        <img width="350px" height="200px" src="../foto.jpeg" alt="" srcset="">
+        <img width="350px" height="200px" src="../img/foto.jpeg" alt="" srcset="">
         <p>Nama : <span>Helwina Putri Ramadhani</span></p>
         <p>Tempat Lahir : <span> Pekanbaru</span></p>
         <p>Tanggal Lahir : <span>10 November 2003</span></p>
