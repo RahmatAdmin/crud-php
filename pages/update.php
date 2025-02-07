@@ -1,5 +1,6 @@
 <?php
 
+// koneksi ke database 
 $connection = new mysqli("localhost", 'root', '', 'taufik');
 
 if(isset($_GET["id"])) {

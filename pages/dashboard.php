@@ -1,15 +1,13 @@
 <?php
-
-
+// koneksi ke database
 $connection = new mysqli("localhost", 'root', '', 'taufik');
-
 
 $QUERY = "SELECT * FROM data";
 $RESULT = $connection->query($QUERY);
 
 $number = 1;
 
-
+// 
 if(isset($_POST["id"])) {
     $id = $_POST["id"];
 
